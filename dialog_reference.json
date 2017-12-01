@@ -1,0 +1,29 @@
+{
+    "sample": {
+        "dialog": "The text of the page",
+        "name": "The character name that is displayed to the player",
+
+        "icon": "The name of an image file to use as the character's portrait",
+        "voice": "The name of an audio file to play for narration",
+
+        "next page": "The id (object key) of the page to jump to if all \"if item\" conditions are satisfied. If there is no \"if item\", the conversation can be advanced at any time.",
+        "if item": "The id of the item the player needs to have to advance the conversation (can also be an array of ids)",
+
+        "choices": [
+            {
+                "text": "The message of the response",
+                "cost": "The id of an item which the player must have in order to select this choice. Can also be an object with \"id\" and \"amount\" keys. Can also be an array of ids or objects with \"id\" and \"amount\" keys (can be a mix of ids and objects). The item(s) will be removed from the player's inventory.",
+                "display cost": "(defaults to true) Whether the cost should be displayed. If \"cost\" is an array, \"display cost\" can be an index or array of indices of the item(s) to be displayed.",
+                "display if can't afford": "(defaults to true) Whether or not to display this choice if the player cannot afford it.",
+                "yes message": "Popup message to display if the player can afford the option",
+                "no message": "Popup message to display if the player can't afford the option",
+                "next page": "The id (object key) of the page to go to on success",
+                "close dialog": "(defaults to false) If true, the dialog is closed when the player makes a choice. The \"next page\" takes effect the next time the player talks to this character. If false, the conversation will immedeately advance to \"next page\" when the player chooses this option (and can afford it).",
+                "give item": "The id of the item to give to the player on success. Can also be an object with \"id\" and \"amount\" keys. Can also be an array of ids or objects with \"id\" and \"amount\" keys (can be a mix of ids and objects).",
+                "action": "The internal identifier of some function to run on success",
+                "args": ["Array of arguments to pass to the \"action\" function"]
+            }
+        ]
+    }
+}
+
